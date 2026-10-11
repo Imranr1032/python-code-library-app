@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: imranreddypalle/py-db:db
+    image: imranreddypalle/python:db
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth_service:
-    image: imranreddypalle/py-auth:auth
+    image: imranreddypalle/python:auth
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book_service:
-    image: imranreddypalle/py-book:book
+    image: imranreddypalle/python:book
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: imranreddypalle/py-borrow:borrow
+    image: imranreddypalle/python:borrow
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: imranreddypalle/py-app:app
+    image: imranreddypalle/python:frontend
     deploy:
       replicas: 1
     ports:
